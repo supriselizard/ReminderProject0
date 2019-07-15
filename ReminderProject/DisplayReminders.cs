@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 
@@ -34,14 +35,17 @@ namespace ReminderProject
 
             for (int i = 0; i < 7; ++i)
             {
+                if (!DaysInWeek[i].Any())
+                    continue;
+
                 Console.WriteLine(_displayBorderSmall);
-                Console.WriteLine("=====" + DaysInWeek[i][0].DateDue.DayOfWeek + "=====");
+                Console.WriteLine(DaysInWeek[i][0].DateDue.DayOfWeek);
 
                 foreach (var reminder in DaysInWeek[i])
                 {
                     Console.WriteLine(_displayBorderVerySmall);
-                    Console.WriteLine(reminder.ReminderName);
-                    Console.WriteLine(reminder.ReminderDesc);
+                    Console.WriteLine("Title: " + reminder.ReminderName);
+                    Console.WriteLine("Desc: " + reminder.ReminderDesc);
                     Console.WriteLine("DateDue: {0}", reminder.DateDue);
                     Console.WriteLine(_displayBorderVerySmall);
                 }
