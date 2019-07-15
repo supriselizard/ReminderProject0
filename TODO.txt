@@ -1,0 +1,16 @@
+Reminder Class
+	Reminder Name [X]
+	Reminder Description [X]
+	Reminder DueDate[X]
+
+DisplayReminders Class
+	Display Single Reminder [X]
+	Display Week Ahead w/ Reminders [ ]
+	Display Month Ahead w/ Reminders [ ]
+
+ReminderDbManager Class
+	Store a list of Reminders [X]
+	Add Reminder Method [X]
+	Find RemindersIn7Days [X]
+	Find RemindersInMonth [ ]
+
