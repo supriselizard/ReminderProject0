@@ -13,7 +13,6 @@ namespace ReminderProject
             ReminderDatabase.Add(reminder);
         }
 
-
         // Useless, doesn't take in multiple reminders in a single day
         public List<Reminder> RemindersInCurrentWeek()
         {

@@ -8,6 +8,7 @@ namespace ReminderProject
     {
         private string _displayBorderBig = "--------------------";
         private string _displayBorderSmall = "----------";
+        private string _displayBorderVerySmall = "-----";
 
         public void DisplayReminder(Reminder reminder)
         {
@@ -27,8 +28,28 @@ namespace ReminderProject
             Console.WriteLine("The task is set to be finished by {0}", reminder.DateDue.ToShortDateString());
         }
 
-        public void DisplayWeekWithRem()
+        public void DisplayWeekWithRem(List<List<Reminder>> DaysInWeek)
         {
+            Console.WriteLine(_displayBorderBig);
+
+            for (int i = 0; i < 7; ++i)
+            {
+                Console.WriteLine(_displayBorderSmall);
+                Console.WriteLine("=====" + DaysInWeek[i][0].DateDue.DayOfWeek + "=====");
+
+                foreach (var reminder in DaysInWeek[i])
+                {
+                    Console.WriteLine(_displayBorderVerySmall);
+                    Console.WriteLine(reminder.ReminderName);
+                    Console.WriteLine(reminder.ReminderDesc);
+                    Console.WriteLine("DateDue: {0}", reminder.DateDue);
+                    Console.WriteLine(_displayBorderVerySmall);
+                }
+
+                Console.WriteLine(_displayBorderSmall);
+            }
+
+            Console.WriteLine(_displayBorderBig);
         }
     }
 }
