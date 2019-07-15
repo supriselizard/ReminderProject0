@@ -50,16 +50,16 @@ namespace ReminderProject
         public List<List<Reminder>> RemindersIn7Days()
         {
             var DaysInWeek = new List<List<Reminder>>(7);
-            for (int i = 0; i < DaysInWeek.Count; ++i)
+            for (int i = 0; i < DaysInWeek.Capacity; ++i)
             {
-                DaysInWeek[i] = new List<Reminder>();
+                DaysInWeek.Add(new List<Reminder>());
             }
 
             foreach (var reminder in ReminderDatabase)
             {
                 for (int i = 0; i < 7; ++i)
                 {
-                    if (reminder.DateDue == DateTime.Today.AddDays(i))
+                    if (reminder.DateDue.Date == DateTime.Today.AddDays(i))
                     {
                         DaysInWeek[i].Add(reminder);
                     }
