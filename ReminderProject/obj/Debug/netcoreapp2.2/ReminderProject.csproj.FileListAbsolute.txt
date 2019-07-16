@@ -9,3 +9,14 @@ C:\Users\User\Desktop\Coding\Projects\ReminderProject\ReminderProject\obj\Debug\
 C:\Users\User\Desktop\Coding\Projects\ReminderProject\ReminderProject\obj\Debug\netcoreapp2.2\ReminderProject.AssemblyInfo.cs
 C:\Users\User\Desktop\Coding\Projects\ReminderProject\ReminderProject\obj\Debug\netcoreapp2.2\ReminderProject.dll
 C:\Users\User\Desktop\Coding\Projects\ReminderProject\ReminderProject\obj\Debug\netcoreapp2.2\ReminderProject.pdb
+C:\Users\User\Desktop\Coding\Projects\ReminderProjectConsole\ReminderProject\bin\Debug\netcoreapp2.2\ReminderProject.deps.json
+C:\Users\User\Desktop\Coding\Projects\ReminderProjectConsole\ReminderProject\bin\Debug\netcoreapp2.2\ReminderProject.runtimeconfig.json
+C:\Users\User\Desktop\Coding\Projects\ReminderProjectConsole\ReminderProject\bin\Debug\netcoreapp2.2\ReminderProject.runtimeconfig.dev.json
+C:\Users\User\Desktop\Coding\Projects\ReminderProjectConsole\ReminderProject\bin\Debug\netcoreapp2.2\ReminderProject.dll
+C:\Users\User\Desktop\Coding\Projects\ReminderProjectConsole\ReminderProject\bin\Debug\netcoreapp2.2\ReminderProject.pdb
+C:\Users\User\Desktop\Coding\Projects\ReminderProjectConsole\ReminderProject\obj\Debug\netcoreapp2.2\ReminderProject.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Coding\Projects\ReminderProjectConsole\ReminderProject\obj\Debug\netcoreapp2.2\ReminderProject.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Coding\Projects\ReminderProjectConsole\ReminderProject\obj\Debug\netcoreapp2.2\ReminderProject.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Coding\Projects\ReminderProjectConsole\ReminderProject\obj\Debug\netcoreapp2.2\ReminderProject.AssemblyInfo.cs
+C:\Users\User\Desktop\Coding\Projects\ReminderProjectConsole\ReminderProject\obj\Debug\netcoreapp2.2\ReminderProject.dll
+C:\Users\User\Desktop\Coding\Projects\ReminderProjectConsole\ReminderProject\obj\Debug\netcoreapp2.2\ReminderProject.pdb

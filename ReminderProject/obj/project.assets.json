@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Coding\\Projects\\ReminderProject\\ReminderProject\\ReminderProject.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Coding\\Projects\\ReminderProjectConsole\\ReminderProject\\ReminderProject.csproj",
       "projectName": "ReminderProject",
-      "projectPath": "C:\\Users\\User\\Desktop\\Coding\\Projects\\ReminderProject\\ReminderProject\\ReminderProject.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\Coding\\Projects\\ReminderProjectConsole\\ReminderProject\\ReminderProject.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Coding\\Projects\\ReminderProject\\ReminderProject\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\Coding\\Projects\\ReminderProjectConsole\\ReminderProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
