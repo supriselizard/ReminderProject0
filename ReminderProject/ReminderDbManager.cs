@@ -6,7 +6,7 @@ namespace ReminderProject
 {
     public class ReminderDbManager
     {
-        private List<Reminder> ReminderDatabase = new List<Reminder>();
+        public List<Reminder> ReminderDatabase { get; private set; } = new List<Reminder>();
 
         public void AddReminder(Reminder reminder)
         {

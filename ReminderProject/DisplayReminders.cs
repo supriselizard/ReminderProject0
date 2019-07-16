@@ -14,8 +14,10 @@ namespace ReminderProject
         public void DisplayReminder(Reminder reminder)
         {
             Console.WriteLine(_displayBorderBig);
+            Console.WriteLine(_displayBorderSmall);
             Console.WriteLine(reminder.ReminderName);
-            Console.WriteLine(_displayBorderBig);
+            Console.WriteLine(_displayBorderSmall);
+            Console.WriteLine(_displayBorderVerySmall);
             Console.WriteLine("Description :");
             if (!string.IsNullOrWhiteSpace(reminder.ReminderDesc))
             {
@@ -27,6 +29,8 @@ namespace ReminderProject
             }
             Console.WriteLine();
             Console.WriteLine("The task is set to be finished by {0}", reminder.DateDue.ToShortDateString());
+            Console.WriteLine(_displayBorderVerySmall);
+            Console.WriteLine(_displayBorderBig);
         }
 
         public void DisplayWeekWithRem(List<List<Reminder>> RemsInWeek)
