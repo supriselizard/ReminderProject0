@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ReminderProject
 {
-    class ReminderDbManager
+    public class ReminderDbManager
     {
         private List<Reminder> ReminderDatabase = new List<Reminder>();
 
@@ -49,10 +49,10 @@ namespace ReminderProject
 
         public List<List<Reminder>> RemindersIn7Days()
         {
-            var DaysInWeek = new List<List<Reminder>>(7);
-            for (int i = 0; i < DaysInWeek.Capacity; ++i)
+            var RemsInWeek = new List<List<Reminder>>(7);
+            for (int i = 0; i < RemsInWeek.Capacity; ++i)
             {
-                DaysInWeek.Add(new List<Reminder>());
+                RemsInWeek.Add(new List<Reminder>());
             }
 
             foreach (var reminder in ReminderDatabase)
@@ -61,12 +61,33 @@ namespace ReminderProject
                 {
                     if (reminder.DateDue.Date == DateTime.Today.AddDays(i))
                     {
-                        DaysInWeek[i].Add(reminder);
+                        RemsInWeek[i].Add(reminder);
                     }
                 }
             }
 
-            return DaysInWeek;
+            return RemsInWeek;
+        }
+
+        public List<List<Reminder>> RemInMonth()
+        {
+            var NumOfDaysInMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            var RemsInMonth = new List<List<Reminder>>(NumOfDaysInMonth);
+            var DaysInMonth = new List<DateTime>(NumOfDaysInMonth);
+
+            for (int i = 0; i < NumOfDaysInMonth; ++i)
+                RemsInMonth.Add(new List<Reminder>());
+            for (int i = 0; i < NumOfDaysInMonth; ++i)
+                DaysInMonth.Add(new DateTime(DateTime.Now.Year, DateTime.Now.Month, i + 1));
+
+            foreach (var reminder in ReminderDatabase)
+            {
+                for (int i = 0; i < NumOfDaysInMonth; ++i)
+                    if (reminder.DateDue.Date == DaysInMonth[i].Date)
+                        RemsInMonth[i].Add(reminder);
+            }
+
+            return RemsInMonth;
         }
     }
 }

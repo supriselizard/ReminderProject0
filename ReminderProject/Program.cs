@@ -16,14 +16,17 @@ namespace ReminderProject
 
             PickupBook.ReminderDesc = "Pickup Ender's Game from Central Library";
             DropOffBooks.ReminderDesc = "Drop Off 'Depth' and 'Doctor Faustus' at the Central Library";
+            TestReminder.ReminderDesc = "Test description for TestReminder";
+            TestReminder0.ReminderDesc = "Test description for TestRemidner0";
 
             DbManger.AddReminder(PickupBook);
             DbManger.AddReminder(DropOffBooks);
             DbManger.AddReminder(TestReminder);
             DbManger.AddReminder(TestReminder0);
 
-            Display.DisplayWeekWithRem(DbManger.RemindersIn7Days());
-
+            //Display.DisplayReminder(PickupBook);
+            //Display.DisplayWeekWithRem(DbManger.RemindersIn7Days());
+            Display.DisplayMonthWithRems(DbManger.RemInMonth());
         }
     }
 }

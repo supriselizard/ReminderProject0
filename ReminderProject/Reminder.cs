@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ReminderProject
 {
-    class Reminder
+    public class Reminder
     {
         public string ReminderName { get; set; }
         public string ReminderDesc { get; set; }

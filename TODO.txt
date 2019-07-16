@@ -5,12 +5,14 @@ Reminder Class
 
 DisplayReminders Class
 	Display Single Reminder [X]
-	Display Week Ahead w/ Reminders [ ]
-	Display Month Ahead w/ Reminders [ ]
+	Display Week Ahead w/ Reminders [X]
+	Display Month Ahead w/ Reminders [X]
 
 ReminderDbManager Class
 	Store a list of Reminders [X]
 	Add Reminder Method [X]
 	Find RemindersIn7Days [X]
-	Find RemindersInMonth [ ]
+	Find RemindersInMonth [X]
+
+UI Class
 
