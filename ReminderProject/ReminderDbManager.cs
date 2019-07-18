@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.IO;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,45 +8,78 @@ namespace ReminderProject
 {
     public class ReminderDbManager
     {
+        private string _path = "";
+
+        public ReminderDbManager()
+        {
+            var list = new List<string>(Directory.GetCurrentDirectory().Split(@"\"));
+
+            for (int i= list.Count - 1; i >= 0; i--)
+            {
+                if (list[i] == "ReminderProject")
+                {
+                    list.Add("ReminderFile.txt");
+                    break;
+                }
+                else if (list[i] != "ReminderProject")
+                    list.Remove(list[i]);
+            }
+
+            _path = string.Join(@"\", list);
+
+
+            var reminders = new List<string>();
+            var readStream = File.Open(_path, FileMode.Open, FileAccess.Read, FileShare.None);
+            StreamReader reader;
+            reader = new StreamReader(readStream);
+            readStream.Dispose();
+
+            foreach (var line in File.ReadAllLines(_path))
+            {
+                reminders.Add(line);
+            }
+
+            foreach (var line in reminders)
+            {
+                var values = line.Split("*||*");
+                var tempRem = new Reminder(Convert.ToDateTime(values[1]), values[0]);
+                tempRem.ReminderDesc = values[2];
+                ReminderDatabase.Add(tempRem);
+            }
+
+            reader.Close();
+        }
+
         public List<Reminder> ReminderDatabase { get; private set; } = new List<Reminder>();
 
         public void AddReminder(Reminder reminder)
         {
             ReminderDatabase.Add(reminder);
+
+            var writeStream = File.Open(_path, FileMode.Open, FileAccess.Write, FileShare.None);
+
+            var writer = new StreamWriter(writeStream);
+            writer.WriteLine($"{reminder.ReminderName}*||*{reminder.DateDue}*||*{reminder.ReminderDesc}");
+
+            writer.Close();
         }
 
-        // Useless, doesn't take in multiple reminders in a single day
-        public List<Reminder> RemindersInCurrentWeek()
+        public void DeleteReminder(Reminder reminder)
         {
-            // index for RemInWeek and DaysThisWeek 
-            // represents the days in the week
-            // meaning index 0 is Sunday, 1 is Monday, etc.
-            var RemInWeek = new List<Reminder>(7);
-            var DaysThisWeek = new List<DateTime>(7);
+            var writeStream = File.Open(_path, FileMode.Open, FileAccess.Write, FileShare.None);
+            var writer = new StreamWriter(writeStream);
+            writer.Dispose();
+            writeStream.Dispose();
 
-            // Assume Monday is Today
-            var sundayDateTime = DateTime.Today;
-            var today = sundayDateTime.DayOfWeek;
+            var tempFile = Path.GetTempFileName();
+            var linesToKeep = File.ReadLines(_path).Where(l => l != $"{reminder.ReminderName}*||*{reminder.DateDue}*||*{reminder.ReminderDesc}");
 
-            for (int i = (int)today; i > 0; i--)
-            {
-                sundayDateTime.AddDays(-1);
-            }
-            for (int i = 0; i < 7; i++)
-            {
-                DaysThisWeek[i] = sundayDateTime.AddDays(i);
-            }
+            File.WriteAllLines(tempFile, linesToKeep);
 
-            foreach (var reminder in ReminderDatabase)
-            {
-                for (int i = 0; i < 7; ++i)
-                {
-                    if (reminder.DateDue.Date == DaysThisWeek[i].Date)
-                        RemInWeek[i] = reminder;
-                }
-            }
+            File.Delete(_path);
+            File.Move(tempFile, _path);
 
-            return RemInWeek;
+            writer.Close();
         }
 
         public List<List<Reminder>> RemindersIn7Days()

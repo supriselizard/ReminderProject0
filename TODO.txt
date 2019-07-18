@@ -14,5 +14,4 @@ ReminderDbManager Class
 	Find RemindersIn7Days [X]
 	Find RemindersInMonth [X]
 
-UI Class
-
+UI [X]

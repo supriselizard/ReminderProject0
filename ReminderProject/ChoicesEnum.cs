@@ -10,6 +10,7 @@ namespace ReminderProject
         DisplaySingleRem,
         DisplayWeekAhead,
         DisplayMonth,
+        DeleteReminder,
         Exit
     }
 }

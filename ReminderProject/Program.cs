@@ -7,14 +7,10 @@ namespace ReminderProject
     {
         static void Main(string[] args)
         {
-            var TestReminder = new Reminder(new DateTime(2019, 7, 17), "TestReminder");
             var Display = new DisplayReminders();
             var DbManager = new ReminderDbManager();
 
-            DbManager.AddReminder(TestReminder);
-
             int input;
-
             while (true)
             {
                 Console.WriteLine("What do you want to do?");
@@ -22,12 +18,13 @@ namespace ReminderProject
                 Console.WriteLine("2: Display a single Reminder.");
                 Console.WriteLine("3: Display the Reminders in the next 7 days.");
                 Console.WriteLine("4: Display the Reminders in the current month.");
-                Console.WriteLine("5: Exit the Program.");
+                Console.WriteLine("5: Delete a Reminder");
+                Console.WriteLine("6: Exit the Program.");
                 try
                 {
                     input = Convert.ToInt32(Console.ReadLine());
 
-                    if (input < 0 || input > 5)
+                    if (input < 0 || input > 6)
                         throw new InvalidOperationException();
                 }
                 catch
@@ -168,6 +165,12 @@ namespace ReminderProject
 
                     case (int)ChoicesEnum.DisplaySingleRem:
 
+                        if (DbManager.ReminderDatabase.Count < 1)
+                        {
+                            Console.WriteLine("You cannot view Reminders, when there are no Reminders in the database.");
+                            break;
+                        }
+
                         while (true)
                         {
                             int choice;
@@ -202,6 +205,41 @@ namespace ReminderProject
                     case (int)ChoicesEnum.DisplayMonth:
 
                         Display.DisplayMonthWithRems(DbManager.RemInMonth());
+                        break;
+
+                    case (int)ChoicesEnum.DeleteReminder:
+
+                        if (DbManager.ReminderDatabase.Count < 1)
+                        {
+                            Console.WriteLine("You cannot delete any Reminders, when there are no Reminders in the database.");
+                            break;
+                        }
+
+                        while (true)
+                        {
+                            int choice;
+                            Console.WriteLine("Which Reminder do you want to delete?");
+                            for (int i = 0; i < DbManager.ReminderDatabase.Count; ++i)
+                            {
+                                Console.WriteLine($"{i + 1}: {DbManager.ReminderDatabase[i].ReminderName}");
+                            }
+
+                            try
+                            {
+                                choice = Convert.ToInt32(Console.ReadLine());
+                                if (choice < 0 || choice > DbManager.ReminderDatabase.Count)
+                                    throw new InvalidOperationException();
+                            }
+                            catch
+                            {
+                                Console.WriteLine("Your Input is Invalid, Please Try Again");
+                                continue;
+                            }
+
+                            DbManager.DeleteReminder(DbManager.ReminderDatabase[choice - 1]);
+                            DbManager.ReminderDatabase.Remove(DbManager.ReminderDatabase[choice - 1]);
+                            break;
+                        }
                         break;
 
                     case (int)ChoicesEnum.Exit:
