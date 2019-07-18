@@ -28,7 +28,7 @@ namespace ReminderProject
                 Console.WriteLine("No Description");
             }
             Console.WriteLine();
-            Console.WriteLine("The task is set to be finished by {0}", reminder.DateDue.ToShortDateString());
+            Console.WriteLine("The task is set to be finished by {0}", reminder.DateDue);
             Console.WriteLine(_displayBorderVerySmall);
             Console.WriteLine(_displayBorderBig);
         }
