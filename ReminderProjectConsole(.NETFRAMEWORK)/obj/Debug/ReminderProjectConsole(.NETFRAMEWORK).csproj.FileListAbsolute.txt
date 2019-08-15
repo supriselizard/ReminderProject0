@@ -1,0 +1,6 @@
+C:\Users\User\Desktop\Coding\ReminderProjectConsole(.NETFRAMEWORK)\ReminderProjectConsole(.NETFRAMEWORK)\obj\Debug\ReminderProjectConsole(.NETFRAMEWORK).csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Coding\ReminderProjectConsole(.NETFRAMEWORK)\ReminderProjectConsole(.NETFRAMEWORK)\bin\Debug\ReminderProjectConsole(.NETFRAMEWORK).exe.config
+C:\Users\User\Desktop\Coding\ReminderProjectConsole(.NETFRAMEWORK)\ReminderProjectConsole(.NETFRAMEWORK)\bin\Debug\ReminderProjectConsole(.NETFRAMEWORK).exe
+C:\Users\User\Desktop\Coding\ReminderProjectConsole(.NETFRAMEWORK)\ReminderProjectConsole(.NETFRAMEWORK)\bin\Debug\ReminderProjectConsole(.NETFRAMEWORK).pdb
+C:\Users\User\Desktop\Coding\ReminderProjectConsole(.NETFRAMEWORK)\ReminderProjectConsole(.NETFRAMEWORK)\obj\Debug\ReminderProjectConsole(.NETFRAMEWORK).exe
+C:\Users\User\Desktop\Coding\ReminderProjectConsole(.NETFRAMEWORK)\ReminderProjectConsole(.NETFRAMEWORK)\obj\Debug\ReminderProjectConsole(.NETFRAMEWORK).pdb
